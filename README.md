@@ -8,3 +8,6 @@ Design patterns are proven solutions to recurring problems in software design th
 # Clone the repository:
 ```sh
 gh repo clone TiyisoWolfiez/DesignPatterns
+```
+
+# TO BE CONTINUED
