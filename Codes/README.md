@@ -16,11 +16,8 @@ This repository contains an assignment on various design patterns, including the
 ## Random Template Method Code:
 ```cpp
 public:
-    // Constructor
     MilitaryUnit(int health, int damage, int defence, int amount, const std::string& name)
         : healthPerSoldier(health), damagePerSoldier(damage), defencePerSoldier(defence), amountOfSoldiersPerUnit(amount), unitName(name) {}
-
-    // Public methods
     void engage() {
         prepare();
         execute();
