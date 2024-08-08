@@ -2,31 +2,16 @@
 #define Infantry_H
 
 #include "Soldiers.h"
+#include "InfantryFactory.h"
 
 class Infantry : public Soldiers {
     public:
         Infantry() {
-        healthPerSoldier = 100;
-        damagePerSoldier = 50;
-        defencePerSoldier = 30;
-        amountOfSoldiersPerUnit = 10;
-        unitName = "Infantry";
-    }
-
-    int getHealthPerSoldier() const override {
-        return healthPerSoldier;
-    }
-    int getDamagePerSoldier() const override {
-        return damagePerSoldier;
-    }
-    int getDefencePerSoldier() const override {
-        return defencePerSoldier;
-    }
-    int getAmountOfSoldiersPerUnit() const override {
-        return amountOfSoldiersPerUnit;
-    }
-    std::string getUnitName() const override {
-        return unitName;
+        setHealthPerSoldier(100);
+        setDamagePerSoldier(50);
+        setDefencePerSoldier(30);
+        setAmountOfSoldiersPerUnit(10);
+        setUnitName("Infantry");
     }
 };
 #endif
