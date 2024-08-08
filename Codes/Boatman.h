@@ -4,12 +4,14 @@
 #include <string>
 #include "Soldiers.h"
 
-class Boatman{
-    private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        std::string unitName;
+class Boatman : public Soldiers {
+public:
+    Boatman() {
+        setHealthPerSoldier(90);
+        setDamagePerSoldier(60);
+        setDefencePerSoldier(20);
+        setAmountOfSoldiersPerUnit(12);
+        setUnitName("Boatman");
+    }
 };
 #endif
