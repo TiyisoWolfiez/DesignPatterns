@@ -15,12 +15,10 @@ This repository contains an assignment on various design patterns, including the
 
 ## Random Template Method Code:
 ```cpp
-public:
-    MilitaryUnit(int health, int damage, int defence, int amount, const std::string& name)
-        : healthPerSoldier(health), damagePerSoldier(damage), defencePerSoldier(defence), amountOfSoldiersPerUnit(amount), unitName(name) {}
-    void engage() {
-        prepare();
-        execute();
-        retreat();
-        rest();
-    }
+Memento(int health, int damage, int defence, int amount, std::string &name){
+            this->healthPerSoldier = health;
+            this->damagePerSoldier = damage;
+            this->defencePerSoldier = defence;
+            this->amountOfSoldiersPerUnit = amount;
+            this->unitName = name;
+        }
