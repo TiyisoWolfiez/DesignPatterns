@@ -1,9 +1,8 @@
-#ifndef ShieldBearerFactory_H
-#define ShieldBearerFactory_H
+#ifndef BoatmanFactory_H
+#define BoatmanFactory_H
 
 #include "SoldierFactory.h"
 #include "Boatman.h"
-
 
 class BoatmanFactory : public SoldierFactory {
 public:
