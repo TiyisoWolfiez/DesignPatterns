@@ -13,7 +13,7 @@ This repository contains an assignment on various design patterns, including the
   4. Relationships between classes.
   5. Any additional classes necessary for a complete representation
 
-## Random Template Method Code:
+## Random Memento Code:
 ```cpp
 Memento(int health, int damage, int defence, int amount, std::string &name){
             this->healthPerSoldier = health;
