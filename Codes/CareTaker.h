@@ -1,6 +1,7 @@
 #ifndef CareTaker_H
 #define CareTaker_H
 
+#include <string>
 #include <vector>
 #include "Memento.h"
 
@@ -13,11 +14,13 @@ class CareTaker {
         mementoList.push_back(memento);
     }
     Memento* getMemento(int index) {
-        if(index >= 0 && index < mementoList.size()) {
-            return mementoList[index];
+        if (index < 0 || static_cast<std::size_t>(index) >= mementoList.size()) {
+            return nullptr;
         }
-        return nullptr;
+        return mementoList[index];
     }
+
+
     ~CareTaker() {
         for (Memento* memento : mementoList) {
             delete memento;
