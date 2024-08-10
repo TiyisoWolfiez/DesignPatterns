@@ -17,21 +17,21 @@ class Infantry : public Soldiers {
     Soldiers* clonis() const override {
         return new Infantry(*this);
     }
+    protected:
+        void prepare() override {
+            std::cout << "Infantry preparing by forming a tight defensive formation.\n";
+        }
 
-    void prepare() override {
-        std::cout << "Infantry preparing by forming a tight defensive formation.\n";
-    }
+        void execute() override {
+            std::cout << "Infantry executing attack!\n";
+        }
 
-    void execute() override {
-        std::cout << "Infantry executing attack!\n";
-    }
+        void retreat() override {
+            std::cout << "Infantry retreating!\n";
+        }
 
-    void retreat() override {
-        std::cout << "Infantry retreating!\n";
-    }
-
-    void rest() override {
-        std::cout << "Infantry resting and regaining strength.\n";
-    }
+        void rest() override {
+            std::cout << "Infantry resting and regaining strength.\n";
+        }
 };
 #endif
