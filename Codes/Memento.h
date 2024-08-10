@@ -12,7 +12,8 @@ class Memento {
         std::string unitName;
 
     public:
-        Memento(int health, int damage, int defence, int amount, std::string &name){
+        Memento(int health, int damage, int defence, int amount, const std::string &name){
+        // refence wcause it fetches same name and dopesnt mistekanly create new object instance of same name
             this->healthPerSoldier = health;
             this->damagePerSoldier = damage;
             this->defencePerSoldier = defence;
