@@ -4,6 +4,7 @@
 #include "Soldiers.h"
 #include "BoatmanFactory.h"
 
+
 class Boatman : public Soldiers {
     public:
         Boatman() {
@@ -17,7 +18,7 @@ class Boatman : public Soldiers {
         Soldiers* clonis() const override {
             return new Boatman(*this);
         }
-
+ protected:
         void prepare() override {
             std::cout << "Boatman preparing by maneuvering boats into strategic positions.\n";
         }
