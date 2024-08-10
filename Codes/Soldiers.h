@@ -53,7 +53,7 @@ class Soldiers {
             retreat();
             rest();
         }
-
+    protected:
         virtual void prepare() = 0;
         virtual void execute() = 0;
         virtual void retreat() = 0;
