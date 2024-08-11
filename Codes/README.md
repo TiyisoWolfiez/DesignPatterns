@@ -3,8 +3,9 @@ This repository contains an assignment on various design patterns, including the
 
 # Design Patterns Covered:
   1. Factory Method
-  2. Template Method
-  3. Memento
+  2. Prototype Method
+  3. Template Method
+  4. Memento
 
 # UML Class Diagram
   1. All relevent classes, their attributes, and methods.
