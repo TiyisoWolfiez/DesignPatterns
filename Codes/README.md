@@ -14,6 +14,10 @@ This repository contains an assignment on various design patterns, including the
   4. Relationships between classes.
   5. Any additional classes necessary for a complete representation
 
+Authors:
+ 1. Tiyiso Hlungwani
+ 2. Tumisho Makhene
+    
 ## Random Memento Code:
 ```cpp
 Memento(int health, int damage, int defence, int amount, std::string &name){
