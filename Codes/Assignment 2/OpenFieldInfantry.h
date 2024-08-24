@@ -1,24 +1,17 @@
-#ifndef OPENFIELDFACTORY_H
-#define OPENFIELDFACTORY_H
+#ifndef OPENFIELDINFANTRY_H
+#define OPENFIELDINFANTRY_H
 
-#include "LegionFactory.h"
-#include "OpenFieldInfantry.h"
-#include "OpenFieldCavalry.h"
-#include "OpenFieldArtillery.h"
+#include "Infantry.h"
 
-class OpenFieldFactory : public LegionFactory {
+class OpenFieldInfantry : public Infantry {
 public:
-    Infantry* createInfantry() override {
-        return new OpenFieldInfantry();
+    void move() override {
+        // Implementation specific to Open Field Infantry movement
     }
     
-    Cavalry* createCavalry() override {
-        return new OpenFieldCavalry();
-    }
-    
-    Artillery* createArtillery() override {
-        return new OpenFieldArtillery();
+    void attack() override {
+        // Implementation specific to Open Field Infantry attack
     }
 };
 
-#endif // OPENFIELDFACTORY_H
+#endif // OPENFIELDINFANTRY_H
