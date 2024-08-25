@@ -2,21 +2,17 @@
 #define RIVERBANKFACTORY_H
 
 #include "LegionFactory.h"
-#include "RiverbankInfantry.h"
-#include "RiverbankCavalry.h"
-#include "RiverbankArtillery.h"
+#include "RiverbankUnits.h"
 
 class RiverbankFactory : public LegionFactory {
 public:
-    Infantry* createInfantry() override {
+    UnitComponent* createInfantry() override {
         return new RiverbankInfantry();
     }
-    
-    Cavalry* createCavalry() override {
+    UnitComponent* createCavalry() override {
         return new RiverbankCavalry();
     }
-    
-    Artillery* createArtillery() override {
+    UnitComponent* createArtillery() override {
         return new RiverbankArtillery();
     }
 };
