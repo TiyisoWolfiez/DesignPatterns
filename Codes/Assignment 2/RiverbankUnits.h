@@ -1,17 +1,37 @@
-#ifndef RIVERBANKINFANTRY_H
-#define RIVERBANKINFANTRY_H
+#ifndef RIVERBANKUNITS_H
+#define RIVERBANKUNITS_H
 
-#include "Infantry.h"
+#include "UnitComponent.h"
+#include <iostream>
 
-class RiverbankInfantry : public Infantry {
+class RiverbankInfantry : public UnitComponent {
 public:
     void move() override {
-        // Implementation specific to Riverbank Infantry movement
+        std::cout << "Riverbank Infantry moving through the riverbank terrain." << std::endl;
     }
-    
     void attack() override {
-        // Implementation specific to Riverbank Infantry attack
+        std::cout << "Riverbank Infantry attacking from the riverbank terrain." << std::endl;
     }
 };
 
-#endif // RIVERBANKINFANTRY_H
+class RiverbankCavalry : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "Riverbank Cavalry moving swiftly along the riverbank." << std::endl;
+    }
+    void attack() override {
+        std::cout << "Riverbank Cavalry charging from the riverbank." << std::endl;
+    }
+};
+
+class RiverbankArtillery : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "Riverbank Artillery positioning on the riverbank." << std::endl;
+    }
+    void attack() override {
+        std::cout << "Riverbank Artillery firing from the riverbank." << std::endl;
+    }
+};
+
+#endif // RIVERBANKUNITS_H
