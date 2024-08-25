@@ -5,13 +5,13 @@
 
 class TacticalMemento {
 private:
-    BattleStrategy* storedStrategy;
+    BattleStrategy* strategy;
 
 public:
-    TacticalMemento(BattleStrategy* strategy) : storedStrategy(strategy) {}
+    TacticalMemento(BattleStrategy* strat) : strategy(strat) {}
 
     BattleStrategy* getStoredStrategy() const {
-        return storedStrategy;
+        return strategy;
     }
 };
 
