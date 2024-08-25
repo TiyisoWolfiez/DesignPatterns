@@ -16,8 +16,8 @@ public:
     }
 
     void executeStrategy() {
-        if (planner.getStrategy()) {
-            planner.getStrategy()->engage();
+        if (planner.getCurrentStrategy()) {
+            planner.getCurrentStrategy()->engage();
         }
     }
 
@@ -28,13 +28,12 @@ public:
 
     void restoreStrategy(const std::string& label) {
         TacticalMemento* memento = archives.getTacticalMemento(label);
-        if (memento) {
-            planner.restoreMemento(memento);
-        }
+        planner.restoreMemento(memento);
     }
 
     void chooseBestStrategy() {
-        // Logic to choose the best strategy based on stored mementos.
+        // Placeholder for choosing the best strategy based on previous results
+        // This would involve using the stored mementos to make informed decisions
     }
 };
 
