@@ -2,21 +2,17 @@
 #define WOODLANDFACTORY_H
 
 #include "LegionFactory.h"
-#include "WoodlandInfantry.h"
-#include "WoodlandCavalry.h"
-#include "WoodlandArtillery.h"
+#include "WoodlandUnits.h"
 
 class WoodlandFactory : public LegionFactory {
 public:
-    Infantry* createInfantry() override {
+    UnitComponent* createInfantry() override {
         return new WoodlandInfantry();
     }
-    
-    Cavalry* createCavalry() override {
+    UnitComponent* createCavalry() override {
         return new WoodlandCavalry();
     }
-    
-    Artillery* createArtillery() override {
+    UnitComponent* createArtillery() override {
         return new WoodlandArtillery();
     }
 };
