@@ -1,12 +1,17 @@
 #ifndef ARTILLERY_H
 #define ARTILLERY_H
 
-#include "LegionUnit.h"
 #include "UnitComponent.h"
+#include <iostream>
 
-class Artillery : public LegionUnit, public UnitComponent {
+class Artillery : public UnitComponent {
 public:
-    virtual ~Artillery() {}
+    void move() override {
+        std::cout << "Artillery moving." << std::endl;
+    }
+    void attack() override {
+        std::cout << "Artillery fighting." << std::endl;
+    }
 };
 
 #endif // ARTILLERY_H
