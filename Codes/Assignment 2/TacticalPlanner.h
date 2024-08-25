@@ -9,14 +9,8 @@ private:
     BattleStrategy* currentStrategy;
 
 public:
-    TacticalPlanner() : currentStrategy(nullptr) {}
-
     void setStrategy(BattleStrategy* strategy) {
         currentStrategy = strategy;
-    }
-
-    BattleStrategy* getStrategy() {
-        return currentStrategy;
     }
 
     TacticalMemento* createMemento() {
@@ -25,6 +19,10 @@ public:
 
     void restoreMemento(TacticalMemento* memento) {
         currentStrategy = memento->getStoredStrategy();
+    }
+
+    BattleStrategy* getCurrentStrategy() const {
+        return currentStrategy;
     }
 };
 
