@@ -6,7 +6,7 @@
 class Ambush : public BattleStrategy {
 public:
     void engage() override {
-        // Implementation of the ambush tactic.
+        std::cout << "Executing ambush tactic." << std::endl;
     }
 };
 
