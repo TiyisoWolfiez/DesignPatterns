@@ -2,11 +2,12 @@
 #define FORTIFICATION_H
 
 #include "BattleStrategy.h"
+#include <iostream>
 
 class Fortification : public BattleStrategy {
 public:
     void engage() override {
-        // Implementation of the fortification strategy.
+        std::cout << "Executing fortification strategy." << std::endl;
     }
 };
 
