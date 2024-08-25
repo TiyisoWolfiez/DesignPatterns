@@ -1,17 +1,37 @@
-#ifndef OPENFIELDCAVALRY_H
-#define OPENFIELDCAVALRY_H
+#ifndef OPENFIELDUNITS_H
+#define OPENFIELDUNITS_H
 
-#include "Cavalry.h"
+#include "UnitComponent.h"
+#include <iostream>
 
-class OpenFieldCavalry : public Cavalry {
+class OpenFieldInfantry : public UnitComponent {
 public:
     void move() override {
-        // Implementation specific to Open Field Cavalry movement
+        std::cout << "OpenField Infantry moving through the open field." << std::endl;
     }
-    
     void attack() override {
-        // Implementation specific to Open Field Cavalry attack
+        std::cout << "OpenField Infantry attacking from the open field." << std::endl;
     }
 };
 
-#endif // OPENFIELDCAVALRY_H
+class OpenFieldCavalry : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "OpenField Cavalry moving swiftly through the open field." << std::endl;
+    }
+    void attack() override {
+        std::cout << "OpenField Cavalry charging through the open field." << std::endl;
+    }
+};
+
+class OpenFieldArtillery : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "OpenField Artillery positioning in the open field." << std::endl;
+    }
+    void attack() override {
+        std::cout << "OpenField Artillery firing from the open field." << std::endl;
+    }
+};
+
+#endif // OPENFIELDUNITS_H
