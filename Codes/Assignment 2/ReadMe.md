@@ -18,5 +18,5 @@ UnitComponent* cavalry = factory->createCavalry();
 UnitComponent* artillery = factory->createArtillery();
 ```
 
-# Real-Life Example
+### Real-Life Example
 Furniture Factory: A furniture factory that can create different types of furniture (chairs, tables, sofas) for different styles (Victorian, Modern, Art Deco).
