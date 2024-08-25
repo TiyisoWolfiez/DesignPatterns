@@ -1,17 +1,37 @@
-#ifndef WOODLANDCAVALRY_H
-#define WOODLANDCAVALRY_H
+#ifndef WOODLANDUNITS_H
+#define WOODLANDUNITS_H
 
-#include "Cavalry.h"
+#include "UnitComponent.h"
+#include <iostream>
 
-class WoodlandCavalry : public Cavalry {
+class WoodlandInfantry : public UnitComponent {
 public:
     void move() override {
-        // Implementation specific to Woodland Cavalry movement
+        std::cout << "Woodland Infantry moving through the woodland terrain." << std::endl;
     }
-    
     void attack() override {
-        // Implementation specific to Woodland Cavalry attack
+        std::cout << "Woodland Infantry attacking from the woodland terrain." << std::endl;
     }
 };
 
-#endif // WOODLANDCAVALRY_H
+class WoodlandCavalry : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "Woodland Cavalry moving swiftly through the woodland." << std::endl;
+    }
+    void attack() override {
+        std::cout << "Woodland Cavalry charging through the woodland." << std::endl;
+    }
+};
+
+class WoodlandArtillery : public UnitComponent {
+public:
+    void move() override {
+        std::cout << "Woodland Artillery positioning in the woodland." << std::endl;
+    }
+    void attack() override {
+        std::cout << "Woodland Artillery firing from the woodland." << std::endl;
+    }
+};
+
+#endif // WOODLANDUNITS_H
