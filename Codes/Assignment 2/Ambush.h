@@ -2,6 +2,7 @@
 #define AMBUSH_H
 
 #include "BattleStrategy.h"
+#include <iostream>
 
 class Ambush : public BattleStrategy {
 public:
