@@ -3,35 +3,36 @@
 
 #include "UnitComponent.h"
 #include <vector>
+#include <algorithm>
 
 class Legion : public UnitComponent {
 private:
-    std::vector<UnitComponent*> units;
+    std::vector<UnitComponent*> components;
 
 public:
+    void move() override {
+        for (auto component : components) {
+            component->move();
+        }
+    }
+
+    void attack() override {
+        for (auto component : components) {
+            component->attack();
+        }
+    }
+
     void add(UnitComponent* component) override {
-        units.push_back(component);
+        components.push_back(component);
     }
 
     void remove(UnitComponent* component) override {
-        units.erase(std::remove(units.begin(), units.end(), component), units.end());
-    }
-
-    void move() override {
-        for (UnitComponent* unit : units) {
-            unit->move();
-        }
-    }
-
-    void fight() override {
-        for (UnitComponent* unit : units) {
-            unit->fight();
-        }
+        components.erase(std::remove(components.begin(), components.end(), component), components.end());
     }
 
     ~Legion() {
-        for (UnitComponent* unit : units) {
-            delete unit;
+        for (auto component : components) {
+            delete component;
         }
     }
 };
