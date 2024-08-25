@@ -2,21 +2,17 @@
 #define OPENFIELDFACTORY_H
 
 #include "LegionFactory.h"
-#include "OpenFieldInfantry.h"
-#include "OpenFieldCavalry.h"
-#include "OpenFieldArtillery.h"
+#include "OpenFieldUnits.h"
 
 class OpenFieldFactory : public LegionFactory {
 public:
-    Infantry* createInfantry() override {
+    UnitComponent* createInfantry() override {
         return new OpenFieldInfantry();
     }
-    
-    Cavalry* createCavalry() override {
+    UnitComponent* createCavalry() override {
         return new OpenFieldCavalry();
     }
-    
-    Artillery* createArtillery() override {
+    UnitComponent* createArtillery() override {
         return new OpenFieldArtillery();
     }
 };
