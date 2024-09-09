@@ -21,14 +21,17 @@ This project simulates the operations of a farm using a modular and extensible s
 The farm system is composed of various farmland units, each containing multiple crop fields.
 
 ## Tasks:
-    1. ### Create a Hierarchical Structure:
-     Represent farmlands composed of multiple `FarmUnit` objects. A `FarmUnit` could be a `CropField`, `Barn`, or another farm-related structure.
+1. ### Create a Hierarchical Structure:
+Represent farmlands composed of multiple `FarmUnit` objects. A `FarmUnit` could be a `CropField`, `Barn`, or another farm-related structure.
 
-    2. ### CropField Details:
+2. ### CropField Details:
       - Store the type of crop (e.g., wheat, corn).
       - Maintain total storage capacity and the current amount of stored crops.
       - Track the current soil state, which affects crop yield.
      
 
-    3.
+3. ### Methods to Implement:
+   - `getTotalCapacity()`:Returns the total capacity of the crop field.
+   - `getCropType()`: Returns the type of crop in the field.
+   - `getSoilStateName()`: Returns the name of the current soil state.
       
