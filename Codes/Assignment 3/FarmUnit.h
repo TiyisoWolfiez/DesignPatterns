@@ -1,21 +1,48 @@
-// FarmUnit.h
 #ifndef FARMUNIT_H
 #define FARMUNIT_H
 
 #include <string>
+#include <vector>
+#include <algorithm>
+#include "Truck.h"
 
-// Abstract Component
 class FarmUnit {
+private:
+    std::vector<Truck*> trucks;  // List of trucks associated with this unit
+
 public:
-    virtual int getTotalCapacity() const = 0;  // Pure virtual function to get total capacity
-    virtual std::string getCropType() const = 0;  // Pure virtual function to get crop type
-    virtual std::string getSoilStateName() const = 0;  // Pure virtual function to get soil state name
+    virtual int getTotalCapacity() const = 0;
+    virtual std::string getCropType() const = 0;
+    virtual std::string getSoilStateName() const = 0;
 
-    virtual void add(FarmUnit* unit) {}  // Virtual function to add a FarmUnit (Composite role)
-    virtual void remove(FarmUnit* unit) {}  // Virtual function to remove a FarmUnit (Composite role)
-    virtual FarmUnit* getChild(int index) { return nullptr; }  // Virtual function to get a child unit (Composite role)
+    virtual void add(FarmUnit* unit) {}
+    virtual void remove(FarmUnit* unit) {}
+    virtual FarmUnit* getChild(int index) { return nullptr; }
 
-    virtual ~FarmUnit() {}  // Virtual destructor
+    virtual ~FarmUnit() {
+        for (auto truck : trucks) {
+            delete truck;
+        }
+    }
+
+    void buyTruck(Truck* truck) {
+        trucks.push_back(truck);
+    }
+
+    void sellTruck(Truck* truck) {
+        auto it = std::find(trucks.begin(), trucks.end(), truck);
+        if (it != trucks.end()) {
+            delete *it;  // Delete the truck
+            trucks.erase(it);  // Remove the truck from the vector
+        }
+    }
+
+    void callTruck() {
+        for (auto truck : trucks) {
+            truck->startEngine();
+            truck->operate();
+        }
+    }
 };
 
 #endif // FARMUNIT_H
