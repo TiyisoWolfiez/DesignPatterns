@@ -7,6 +7,8 @@
 #include "FloodedSoil.h"
 #include "FertilizerTruck.h"
 #include "DeliveryTruck.h"
+#include "BFSTraversal.h"
+#include "DFSTraversal.h"
 
 int main() {
     // Create concrete soil states
@@ -81,6 +83,33 @@ int main() {
     std::cout << "Calling remaining trucks...\n";
     myFarm->callTruck();
     std::cout << "Trucks dispatched for their operations.\n";
+
+    // Traversal Testing
+    std::cout << "Breadth-First Traversal:\n";
+    BFSTraversal bfs(myFarm);
+    bfs.firstFarm();
+    while (!bfs.isDone()) {
+        FarmUnit* current = bfs.currentFarm();
+        std::cout << "BFS - Current Farm: " 
+                  << "Crop Type: " << current->getCropType() << " | " 
+                  << "Soil State: " << current->getSoilStateName() << " | " 
+                  << "Total Capacity: " << current->getTotalCapacity() 
+                  << std::endl;
+        bfs.next();
+    }
+
+    std::cout << "Depth-First Traversal:\n";
+    DFSTraversal dfs(myFarm);
+    dfs.firstFarm();
+    while (!dfs.isDone()) {
+        FarmUnit* current = dfs.currentFarm();
+        std::cout << "DFS - Current Farm: " 
+                  << "Crop Type: " << current->getCropType() << " | " 
+                  << "Soil State: " << current->getSoilStateName() << " | " 
+                  << "Total Capacity: " << current->getTotalCapacity() 
+                  << std::endl;
+        dfs.next();
+    }
 
     // Clean up
     // delete drySoil;
