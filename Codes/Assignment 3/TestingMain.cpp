@@ -5,8 +5,8 @@
 #include "DrySoil.h"
 #include "FruitfulSoil.h"
 #include "FloodedSoil.h"
-#include "FertilizerDecorator.h"
-#include "ExtraBarnDecorator.h"
+#include "FertilizerTruck.h"
+#include "DeliveryTruck.h"
 
 int main() {
     // Create concrete soil states
@@ -18,40 +18,82 @@ int main() {
     CropField* wheatField = new CropField("Wheat", 1000);
     CropField* cornField = new CropField("Corn", 800);
 
+    // Create trucks
+    FertilizerTruck* fertTruck1 = new FertilizerTruck();
+    FertilizerTruck* fertTruck2 = new FertilizerTruck(); // Additional truck
+    DeliveryTruck* delTruck1 = new DeliveryTruck();
+    DeliveryTruck* delTruck2 = new DeliveryTruck(); // Additional truck
+
+    // Set trucks to crop fields
+    wheatField->addFertilizerTruck(fertTruck1);
+    wheatField->addDeliveryTruck(delTruck1);
+    cornField->addFertilizerTruck(fertTruck2);
+    cornField->addDeliveryTruck(delTruck2);
+
     // Set initial soil states for the crop fields
     wheatField->setSoilState(fruitfulSoil);  // Initially fruitful soil for wheat
     cornField->setSoilState(drySoil);        // Initially dry soil for corn
 
-    // Apply fertilizer to the corn field
-    CropField* fertilizedCornField = new FertilizerDecorator(cornField);
-    
-    // Add an extra barn to the wheat field
-    CropField* enhancedWheatField = new ExtraBarnDecorator(wheatField, 500);
+    // Create a barn with a specific capacity
+    Barn* mainBarn = new Barn(2000);
 
-    // Test the getTotalCapacity() function for the enhanced wheat field
-    std::cout << "Enhanced Wheat Field Capacity: " << enhancedWheatField->getTotalCapacity() << std::endl;
+    // Create a farm and add crop fields and barn to it (Composite Pattern)
+    Farm* myFarm = new Farm();
+    myFarm->add(wheatField);
+    myFarm->add(cornField);
+    myFarm->add(mainBarn);
 
-    // Test the leftover capacity after adding the extra barn
-    std::cout << "Leftover Capacity in Extra Barn: " << dynamic_cast<ExtraBarnDecorator*>(enhancedWheatField)->getLeftoverCapacity() << std::endl;
+    // Test the getTotalCapacity() function for the farm
+    std::cout << "Total Farm Capacity: " << myFarm->getTotalCapacity() << std::endl;
 
-    // Simulate rain on fertilized corn field and harvest
-    std::cout << "Simulating rain on fertilized corn field...\n";
-    fertilizedCornField->rain();
-    std::cout << "After rain, Fertilized Corn Field Soil State: " << fertilizedCornField->getSoilStateName() << std::endl;
-    std::cout << "Harvesting crops from fertilized corn field...\n";
-    fertilizedCornField->harvest();
+    // Test getting crop types and soil states
+    std::cout << "Wheat Field - Crop: " << wheatField->getCropType() << ", Soil: " << wheatField->getSoilStateName() << std::endl;
+    std::cout << "Corn Field - Crop: " << cornField->getCropType() << ", Soil: " << cornField->getSoilStateName() << std::endl;
 
-    // Test harvesting crops from enhanced wheat field
-    std::cout << "Harvesting crops from enhanced wheat field...\n";
-    enhancedWheatField->harvest();
+    // Simulate rain on wheat field and corn field
+    std::cout << "Simulating rain on wheat field...\n";
+    wheatField->rain();
+    std::cout << "After rain, Wheat Field Soil State: " << wheatField->getSoilStateName() << std::endl;
+
+    std::cout << "Simulating rain on corn field...\n";
+    cornField->rain();
+    std::cout << "After rain, Corn Field Soil State: " << cornField->getSoilStateName() << std::endl;
+
+    // Test harvesting crops
+    std::cout << "Harvesting crops from wheat field...\n";
+    wheatField->harvest();
+    std::cout << "Harvesting crops from corn field...\n";
+    cornField->harvest();
+
+    // Test getting barn capacity
+    std::cout << "Main Barn Capacity: " << mainBarn->getTotalCapacity() << std::endl;
+
+    // Test buying and selling trucks
+    std::cout << "Buying additional trucks...\n";
+    myFarm->buyTruck(fertTruck1);
+    myFarm->buyTruck(delTruck1);
+    std::cout << "Trucks bought and added to the farm.\n";
+
+    std::cout << "Selling one Fertilizer Truck...\n";
+    myFarm->sellTruck(fertTruck1);
+    std::cout << "One Fertilizer Truck sold.\n";
+
+    std::cout << "Calling remaining trucks...\n";
+    myFarm->callTruck();
+    std::cout << "Trucks dispatched for their operations.\n";
 
     // Clean up
     // delete drySoil;
     // delete fruitfulSoil;
     // delete floodedSoil;
-    // delete fertilizedCornField;
-    // delete enhancedWheatField;
+    // delete wheatField;
+    // delete cornField;
+    // delete mainBarn;
     // delete myFarm;
+    // delete fertTruck1;  // This will be deleted after being sold
+    // delete fertTruck2;
+    // delete delTruck1;  // This will be deleted after being sold
+    // delete delTruck2;
 
     return 0;
 }
