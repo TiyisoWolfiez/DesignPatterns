@@ -18,6 +18,7 @@ public:
     virtual void add(FarmUnit* unit) {}
     virtual void remove(FarmUnit* unit) {}
     virtual FarmUnit* getChild(int index) { return nullptr; }
+    virtual int getChildCount() const { return 0; }
 
     virtual ~FarmUnit() {
         for (auto truck : trucks) {
