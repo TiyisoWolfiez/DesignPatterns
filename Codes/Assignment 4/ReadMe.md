@@ -17,6 +17,22 @@ We also ensure the correctness and stability of the system through `unit tests` 
 
 ### Design Patterns Used
 
+The project leverages the following design patterns to ensure scalability, flexibility, and clean separation of concerns:
+
+### Command Pattern:
+Encapsulates requests for device actions (like turning off all lights or locking all doors) into command objects that can be executed later, such as in a macro routine.
+
+**Classes:**
+- `TurnOffAllLights`
+- `LockAllDoors`
+- `MacroRoutine`
+
+### Adapter Pattern:
+Integrates the legacy thermostat (`LegacyThermostat`) into the new smart home system by adapting its interface through the `SmartThermostatIntegrator` class.
+
+### Observer Pattern (used with sensors):
+Allows the motion sensor (`Sensor`) to notify devices like lights whenever movement is detected, triggering their corresponding actions.
+
 ### Build and Run
 
 ### Running Unit Tests
