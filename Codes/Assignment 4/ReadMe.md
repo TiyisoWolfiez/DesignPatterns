@@ -12,5 +12,12 @@ We also ensure the correctness and stability of the system through `unit tests` 
 - [Build and Run](#build-and-run)
 - [Running Unit Tests](#running-unit-tests)
 - [Valgrind Memory Leak Checks](#valgrind-memory-leak-checks)
-- [Contributing](#contributing)
-- [License](#license)
+
+### Project Structure
+
+### Design Patterns Used
+
+### Running Unit Tests
+
+### Valgrind Memory Leak Checks
+
