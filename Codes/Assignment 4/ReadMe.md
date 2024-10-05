@@ -17,6 +17,8 @@ We also ensure the correctness and stability of the system through `unit tests` 
 
 ### Design Patterns Used
 
+### Build and Run
+
 ### Running Unit Tests
 
 ### Valgrind Memory Leak Checks
