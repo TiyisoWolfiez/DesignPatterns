@@ -1,8 +1,14 @@
 #include "SmartHome.h"
 #include <iostream>
 
-SmartHome::SmartHome() {}
+  SmartHome::SmartHome() {
+        // Instantiate rooms and add them to the vector
+        rooms.push_back(new Room("Living Room"));
+        rooms.push_back(new Room("Kitchen"));
+        rooms.push_back(new Room("Bedroom"));
+    }
 
+    
 SmartHome::~SmartHome() {
     for (auto room : rooms) {
         delete room;
