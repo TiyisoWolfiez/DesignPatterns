@@ -9,17 +9,18 @@ public:
     LockAllDoors(SmartHome* home) : smartHome(home) {}
 
     void execute() override {
+        // Logic to lock all doors in the smart home
         for (Room* room : smartHome->getRooms()) {
             for (SmartDevice* device : room->getDevices()) {
                 if (device->getDeviceType() == "DoorLock") {
-                    device->performAction();
+                    device->performAction(); // Assuming performAction toggles the lock
                 }
             }
         }
     }
 
 private:
-    SmartHome* smartHome; 
+    SmartHome* smartHome; // Reference to the SmartHome to access rooms and devices
 };
 
 #endif // LOCKALLDOORS_H
