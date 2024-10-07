@@ -1,4 +1,5 @@
 #include "DoorLock.h"
+#include <iostream>
 
 DoorLock::DoorLock() : isLocked(true) {}
 
@@ -7,7 +8,8 @@ std::string DoorLock::getStatus() const {
 }
 
 void DoorLock::performAction() {
-    isLocked = !isLocked;
+    isLocked = !isLocked; // Toggle the door lock
+    std::cout << "Door is Locked" << getStatus() << std::endl;
 }
 
 std::string DoorLock::getDeviceType() const {
