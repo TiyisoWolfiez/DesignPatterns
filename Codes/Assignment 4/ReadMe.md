@@ -15,6 +15,8 @@ We also ensure the correctness and stability of the system through `unit tests` 
 
 ### Project Structure
 
+#update to include UML/ and Doxygen/
+
 ├── src/
 │   ├── main.cpp                   # Main entry point for the SmartHome system
 │   ├── SmartHome.h/.cpp            # SmartHome class handling rooms and devices
@@ -74,4 +76,7 @@ TO RUN: make run
 _______
   
 
-
+UMLs :
+  class diagram
+  activity diagram 
+  sequence diagram
