@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -g
-OBJECTS = main.o SmartHome.o Room.o Light.o DoorLock.o Thermostat.o LegacyThermostat.o SmartThermostatIntegrator.o Sensor.o MacroRoutine.o
-TEST_OBJECTS = SmartHomeTests.o SmartHome.o Room.o Light.o DoorLock.o Thermostat.o LegacyThermostat.o SmartThermostatIntegrator.o Sensor.o MacroRoutine.o
+OBJECTS = main.o SmartHome.o Room.o Light.o DoorLock.o Thermostat.o LegacyThermostat.o SmartThermostatIntegrator.o MotionSensor.o MacroRoutine.o
+TEST_OBJECTS = SmartHomeTests.o SmartHome.o Room.o Light.o DoorLock.o Thermostat.o LegacyThermostat.o SmartThermostatIntegrator.o MotionSensor.o MacroRoutine.o
 
 # Target for building the SmartHomeAutomation executable
 SmartHomeAutomation: $(OBJECTS)
