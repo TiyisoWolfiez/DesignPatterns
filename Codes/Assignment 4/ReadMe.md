@@ -60,3 +60,18 @@ Allows the motion sensor (`Sensor`) to notify devices like lights whenever movem
 
 ### Valgrind Memory Leak Checks
 
+
+Latest Update:
+  Removed Obser.cpp and refactored the observer pattern
+
+
+
+USE MAKEFILE:
+
+TO COMPILE: make
+___________
+TO RUN: make run
+_______
+  
+
+
