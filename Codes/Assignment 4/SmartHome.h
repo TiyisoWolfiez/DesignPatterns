@@ -4,7 +4,11 @@
 #include <vector>
 #include "Room.h"
 
-class SmartHome {
+
+/* doesnt need to directly inherit from componenet SMartDevice as it not a SmartDevice
+Manages instances of Rooms do have --->*/
+
+class SmartHome {       //Composite that hosts Rooms
 private:
     std::vector<Room*> rooms;
 
