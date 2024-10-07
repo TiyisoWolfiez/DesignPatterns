@@ -10,4 +10,15 @@ Design patterns are proven solutions to recurring problems in software design th
 gh repo clone TiyisoWolfiez/DesignPatterns
 ```
 
-# TO BE CONTINUED
+Latest Update:
+  Removed Obser.cpp and refactored the observer pattern
+
+
+
+USE MAKEFILE:
+
+TO COMPILE: make
+___________
+TO RUN: make run
+_______
+  
