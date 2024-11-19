@@ -18,22 +18,39 @@ We also ensure the correctness and stability of the system through `unit tests` 
 #update to include UML/ and Doxygen/
 
 ├── src/
-│   ├── main.cpp                   # Main entry point for the SmartHome system
+
+│   ├── main.cpp    # Main entry point for the SmartHome system
+
 │   ├── SmartHome.h/.cpp            # SmartHome class handling rooms and devices
+
 │   ├── Room.h/.cpp                 # Room class, holds devices
+
 │   ├── Light.h/.cpp                # Light class, toggles on/off
+
 │   ├── DoorLock.h/.cpp             # DoorLock class, locks/unlocks
+
 │   ├── Thermostat.h/.cpp           # Thermostat class for controlling room temperature
+
 │   ├── LegacyThermostat.h/.cpp     # Old thermostat to be integrated with new system
+
 │   ├── SmartThermostatIntegrator.h/.cpp  # Adapter for Legacy Thermostat
+
 │   ├── MacroRoutine.h/.cpp         # Macro Command for Goodnight routine
+
 │   ├── Sensor.h/.cpp               # Motion sensor for detecting movement
+
 │   ├── Commands/
+
 │       ├── TurnOffAllLights.h/.cpp # Command to turn off all lights
+
 │       └── LockAllDoors.h/.cpp     # Command to lock all doors
+
 ├── tests/
+
 │   ├── SmartHomeTests.cpp          # Unit tests for SmartHome using Google Test
+
 ├── README.md                       # Project documentation
+
 └── Makefile                        # Build configuration
 
 
